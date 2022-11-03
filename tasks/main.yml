@@ -1,0 +1,11 @@
+---
+# tasks file for lighthouse-role
+- name: Install lighthouse
+  ansible.builtin.git:
+    repo: https://github.com/VKCOM/lighthouse.git
+    dest: /usr/share/nginx/html/repo
+- name: Copy files
+  ansible.builtin.copy:
+    src: /usr/share/nginx/html/repo/
+    dest: /usr/share/nginx/html/
+    remote_src: yes
